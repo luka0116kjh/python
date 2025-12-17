@@ -1,17 +1,18 @@
-import re
+from fastapi import FastAPI, HTTPException
 
-def check_password(pw):
-    score = 0
-    if len(pw) >= 8:
-        score += 1
-    if re.search("[A-Z]", pw):
-        score += 1
-    if re.search("[0-9]", pw):
-        score += 1
-    if re.search("[!@#$%^&*]", pw):
-        score += 1
-    return score
+app = FastAPI()
 
-password = input("비밀번호 입력: ")
-strength = check_password(password)
-print(f"보안 점수: {strength}/4")
+@app.get("/")
+def root():
+    return {"message": "Hello Backend"}
+
+@app.get("/hello")
+def hello(name: str = "world"):
+    return {"hello": name}
+
+@app.get("/users/{user_id}")
+def get_user(user_id: int):
+    if user_id == 1:
+        return {"user_id": user_id, "name": "Luka"}
+    else:
+        raise HTTPException(status_code=404, detail="User not found")
