@@ -1,7 +1,12 @@
 {
-  "kjh08116": {
+  "luka1111": {
     "salt": "Wt7DzjmzK8XQy/xo06Jy/A==",
     "hash": "gla4vHIpndKiFKPhjopAYjc0h7V1Fie1s/4qPfhM7F0=",
+    "iterations": 200000
+  },
+  "luka": {
+    "salt": "ZjkjCHevzB+/NnbF4Tk13A==",
+    "hash": "N3Qdc5fxdUBq6UEhao9jEit8nNwXqFFVtqnpfiumUhY=",
     "iterations": 200000
   }
 }
