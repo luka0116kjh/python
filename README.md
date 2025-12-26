@@ -1,1 +1,2 @@
-I am practicing backend development with Python.
+간단한 회원가입/로그인 콘솔 프로그램 제작
+users.json 파일 계정 저장
