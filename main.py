@@ -11,8 +11,11 @@ ITERATIONS = 200_000
 def load_db() -> dict:
     if not os.path.exists(DB_FILE):
         return {}
-    with open(DB_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(DB_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, ValueError):
+        return {}
 
 def save_db(db: dict) -> None:
     with open(DB_FILE, "w", encoding="utf-8") as f:
